@@ -105,6 +105,10 @@ public class Remotely.VncBox : Box {
 		this.destroy();
 	}
 
+	public void set_view_only(bool b){
+		display.read_only = b;
+	}
+
 	public void set_zoom_mode(ZoomMode mode){
 		switch(mode){
 			case ZoomMode.FIT_WINDOW: {

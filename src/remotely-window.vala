@@ -23,6 +23,7 @@ using Gtk;
 public class Remotely.Window : Gtk.ApplicationWindow {
 
 	[GtkChild] Entry connect_entry;
+	[GtkChild] CheckButton view_only_checkbutton;
 	[GtkChild] Popover new_connection_popover;
 
 	[GtkChild] Revealer connection_revealer;
@@ -91,6 +92,12 @@ public class Remotely.Window : Gtk.ApplicationWindow {
 	private void zoom_original_button_clicked(){
 		VncBox cbox = (VncBox)vnc_notebook.get_nth_page(vnc_notebook.get_current_page());
 		cbox.set_zoom_mode(ZoomMode.ORIGINAL_SIZE);
+	}
+
+	[GtkCallback]
+	private void view_only_checkbutton_clicked(){
+		VncBox cbox = (VncBox)vnc_notebook.get_nth_page(vnc_notebook.get_current_page());
+		cbox.set_view_only(view_only_checkbutton.active);
 	}
 
 	private void update_view(){
