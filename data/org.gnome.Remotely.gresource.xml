@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/gnome/Remotely">
+    <file>ui/window.ui</file>
+    <file>ui/vnc-box.ui</file>
+  </gresource>
+</gresources>
