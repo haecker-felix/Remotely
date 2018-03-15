@@ -128,7 +128,8 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="text" translatable="yes">Strg + Alt + Entf</property>
+            <property name="text" translatable="yes">Ctrl + Alt + Del</property>
+            <signal name="clicked" handler="ctrlaltdel_clicked" swapped="no"/>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -138,9 +139,9 @@
         </child>
         <child>
           <object class="GtkModelButton">
-            <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
+            <property name="no_show_all">True</property>
             <property name="text" translatable="yes">Strg + Alt + F1</property>
           </object>
           <packing>
@@ -151,9 +152,9 @@
         </child>
         <child>
           <object class="GtkModelButton">
-            <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
+            <property name="no_show_all">True</property>
             <property name="text" translatable="yes">Strg + Alt + F2</property>
           </object>
           <packing>
@@ -164,9 +165,9 @@
         </child>
         <child>
           <object class="GtkModelButton">
-            <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
+            <property name="no_show_all">True</property>
             <property name="text" translatable="yes">Strg + Alt + F3</property>
           </object>
           <packing>
@@ -430,9 +431,9 @@
                 </child>
                 <child>
                   <object class="GtkMenuButton" id="send_keyboardshortcut_button">
+                    <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
-                    <property name="no_show_all">True</property>
                     <property name="popover">send_keyboardshortcut_popover</property>
                     <child>
                       <object class="GtkImage">

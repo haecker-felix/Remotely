@@ -109,6 +109,10 @@ public class Remotely.VncBox : Box {
 		display.read_only = b;
 	}
 
+	public void send_keys(uint[] keys){
+		display.send_keys(keys);
+	}
+
 	public void set_zoom_mode(ZoomMode mode){
 		switch(mode){
 			case ZoomMode.FIT_WINDOW: {

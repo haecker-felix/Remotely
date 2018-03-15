@@ -104,12 +104,22 @@ public class Remotely.Window : Gtk.ApplicationWindow {
 		cbox.set_view_only(view_only_checkbutton.active);
 	}
 
+	[GtkCallback]
+	private void ctrlaltdel_clicked(){
+		VncBox cbox = (VncBox)vnc_notebook.get_nth_page(vnc_notebook.get_current_page());
+
+		uint[] keys = {0xFFE3, 0xFFE9, 0xFFFF};
+
+		cbox.send_keys(keys);
+	}
+
 	private void update_view(){
 		if(vnc_notebook.get_n_pages() > 1) vnc_notebook.show_tabs = true;
 		else vnc_notebook.show_tabs = false;
 
 		if(vnc_notebook.get_n_pages() == 0){
 			vnc_stack.set_visible_child_name("no-connection");
+			header_bar.set_subtitle("");
 			connection_revealer.set_reveal_child(false);
 		}else{
 			vnc_stack.set_visible_child_name("notebook");
