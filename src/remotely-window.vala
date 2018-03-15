@@ -41,13 +41,17 @@ public class Remotely.Window : Gtk.ApplicationWindow {
 		vnc_notebook.page_removed.connect(update_view);
 		vnc_notebook.switch_page.connect((page, num) => {
 			VncBox cbox = (VncBox)page;
-			header_bar.set_subtitle("%s".printf(cbox.host));
+			header_bar.set_subtitle("%s:%s".printf(cbox.host, cbox.port));
 		});
 	}
 
 	[GtkCallback]
 	private void connect_button_clicked(){
-		VncBox cbox = new VncBox(connect_entry.get_text(),"5902");
+		string[] connection = (connect_entry.get_text()).split(":");
+		if(connection[1] == null) connection[1] = "5900";
+		if(int.parse(connection[1]) < 5900) connection[1] = (int.parse(connection[1])+5900).to_string();
+
+		VncBox cbox = new VncBox(connection[0],connection[1]);
 
 		Gtk.Box titlebox = new Gtk.Box(Orientation.HORIZONTAL,0);
 		Gtk.Label title = new Gtk.Label (connect_entry.get_text());
