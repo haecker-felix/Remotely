@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.20.3 -->
+<!-- Generated with glade 3.22.0 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
   <object class="GtkPopoverMenu" id="connection_menu_popover">
@@ -30,7 +30,7 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="text" translatable="yes">Verbindung trennen</property>
+            <property name="text" translatable="yes">Disconnect</property>
             <signal name="clicked" handler="disconnect_button_clicked" swapped="no"/>
           </object>
           <packing>
@@ -60,7 +60,7 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="halign">start</property>
-            <property name="label" translatable="yes">Neue Verbindung herstellen</property>
+            <property name="label" translatable="yes">Create new connection</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -85,11 +85,12 @@
             </child>
             <child>
               <object class="GtkButton" id="connect_button">
-                <property name="label" translatable="yes">Verbinden</property>
+                <property name="label">gtk-connect</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="halign">end</property>
+                <property name="use_stock">True</property>
                 <signal name="clicked" handler="connect_button_clicked" swapped="no"/>
                 <style>
                   <class name="suggested-action"/>
@@ -221,7 +222,7 @@
               <object class="GtkLabel">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Nicht verbunden</property>
+                <property name="label" translatable="yes">Not connected</property>
                 <attributes>
                   <attribute name="font-desc" value="Cantarell Bold 24"/>
                 </attributes>
@@ -239,7 +240,7 @@
               <object class="GtkLabel">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Sie können eine neue Verbindung mit einem entfernten Bildschirm herstellen.</property>
+                <property name="label" translatable="yes">You can connect to a remote screen</property>
                 <style>
                   <class name="dim-label"/>
                 </style>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.20.3 -->
+<!-- Generated with glade 3.22.0 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
   <template class="RemotelyVncBox" parent="GtkBox">
@@ -123,7 +123,7 @@
                   <object class="GtkLabel">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Es konnte keine Verbindung hergestellt werden.</property>
+                    <property name="label" translatable="yes">No connection could be established.</property>
                     <style>
                       <class name="dim-label"/>
                     </style>
@@ -136,7 +136,7 @@
                 </child>
                 <child>
                   <object class="GtkButton" id="reconnect_button">
-                    <property name="label" translatable="yes">Erneut versuchen</property>
+                    <property name="label" translatable="yes">Try again</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
@@ -190,7 +190,7 @@
                           <object class="GtkLabel" id="notification_label">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="label" translatable="yes">text</property>
+                            <property name="label" translatable="yes">...</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -269,7 +269,7 @@
                                 <property name="can_focus">False</property>
                                 <property name="halign">start</property>
                                 <property name="margin_bottom">6</property>
-                                <property name="label" translatable="yes">Authenfizierung</property>
+                                <property name="label" translatable="yes">Authentication</property>
                                 <attributes>
                                   <attribute name="weight" value="bold"/>
                                 </attributes>
@@ -307,7 +307,7 @@
                               <object class="GtkLabel" id="label3">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">Client Name</property>
+                                <property name="label" translatable="yes">Client</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -344,7 +344,7 @@
                               <object class="GtkLabel" id="label1">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">Benutzer</property>
+                                <property name="label" translatable="yes">User</property>
                                 <property name="justify">right</property>
                               </object>
                               <packing>
@@ -381,7 +381,7 @@
                               <object class="GtkLabel" id="label2">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">Passwort</property>
+                                <property name="label" translatable="yes">Password</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -427,10 +427,11 @@
                             <property name="margin_top">6</property>
                             <child>
                               <object class="GtkButton" id="password_cancel_button">
-                                <property name="label" translatable="yes">Abbrechen</property>
+                                <property name="label">gtk-cancel</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">True</property>
+                                <property name="use_stock">True</property>
                                 <signal name="clicked" handler="password_cancel_button_clicked" swapped="no"/>
                               </object>
                               <packing>
@@ -441,10 +442,11 @@
                             </child>
                             <child>
                               <object class="GtkButton" id="passwort_connect_button">
-                                <property name="label" translatable="yes">Verbinden</property>
+                                <property name="label">gtk-connect</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">True</property>
+                                <property name="use_stock">True</property>
                                 <signal name="clicked" handler="passwort_connect_button_clicked" swapped="no"/>
                               </object>
                               <packing>

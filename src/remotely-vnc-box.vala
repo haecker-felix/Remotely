@@ -68,21 +68,21 @@ public class Remotely.VncBox : Box {
 
 	private void connect_signals(){
 		display.vnc_connected.connect(() => {
-			status_label.set_text("Warte auf Host...");
+			status_label.set_text("Waiting for host...");
 		});
 		display.vnc_disconnected.connect(() => {
-			status_label.set_text("Verbindung getrennt");
+			status_label.set_text("Disconnected");
 			connection_stack.set_visible_child_name("error");
 		});
 		display.vnc_initialized.connect(() => {
 			connection_stack.set_visible_child_name("vnc");
 		});
 		display.vnc_auth_credential.connect((authlist) => {
-			status_label.set_text("Warte auf Authentifizierung...");
+			status_label.set_text("Waiting for authentication...");
 			show_password_entry(authlist);
 		});
 		display.vnc_auth_failure.connect((error) => {
-			show_notification("Authentifizierungsfehler");
+			show_notification("Authentication error");
 			connection_stack.set_visible_child_name("error");
 		});
 		display.vnc_error.connect((error) => {
@@ -90,13 +90,13 @@ public class Remotely.VncBox : Box {
 			connection_stack.set_visible_child_name("error");
 		});
 		display.vnc_auth_unsupported.connect(() => {
-			show_notification("Authentifizierung wird nicht unterstützt");
+			show_notification("Authentication is not supported");
 			connection_stack.set_visible_child_name("error");
 		});
 	}
 
 	private void connect(){
-		status_label.set_text("Verbindung wird hergestellt...");
+		status_label.set_text("Establishing connection...");
 		display.open_host(host,port);
 	}
 
