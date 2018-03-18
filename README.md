@@ -7,7 +7,7 @@ Why? Because there is no GTK3 VNC client, which works flawless.
 
 ## Build introductions
 ```
-git clone --recurse-submodules https://github.com/haecker-felix/Remotely
+git clone https://github.com/haecker-felix/Remotely
 cd Remotely
 mkdir build
 cd build
